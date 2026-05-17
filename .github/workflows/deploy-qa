@@ -54,7 +54,6 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
           npm install -g vercel
-          cd frontend
           vercel --token $VERCEL_TOKEN --yes --debug
           # ไม่ใช้ --prod เพื่อให้ deploy เป็น preview URL
 
