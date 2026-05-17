@@ -12,7 +12,9 @@ async function initDatabase() {
     const adminPassword = await bcrypt.hash('admin123', 10);
     await db.user.upsert({
       where: { username: 'admin' },
-      update: {},
+      update: {
+        password: adminPassword
+      },
       create: {
         username: 'admin',
         password: adminPassword,
