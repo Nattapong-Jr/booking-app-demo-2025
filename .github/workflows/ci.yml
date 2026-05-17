@@ -179,7 +179,7 @@ jobs:
           cd frontend
           vercel --prod \
             --token $VERCEL_TOKEN \
-            --yes
+            --yes --debug
 
   # ─────────────────────────────────────────────
   # Job 4: Deploy Backend to Render

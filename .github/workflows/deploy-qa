@@ -55,7 +55,7 @@ jobs:
         run: |
           npm install -g vercel
           cd frontend
-          vercel --token $VERCEL_TOKEN --yes
+          vercel --token $VERCEL_TOKEN --yes --debug
           # ไม่ใช้ --prod เพื่อให้ deploy เป็น preview URL
 
       - name: Deploy Backend to Render (QA)
