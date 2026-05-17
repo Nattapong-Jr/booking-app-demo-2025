@@ -198,12 +198,23 @@ jobs:
 
       # ── 3. OWASP Dependency Check ─────────────
       # ตรวจสอบ dependencies กับ CVE database
-      - name: OWASP Dependency Check
+      - name: OWASP Dependency Check (Backend)
         uses: dependency-check/Dependency-Check_Action@main
-        id: depcheck
+        id: depcheck_backend
         with:
-          project: 'booking-app'
-          path: 'backend,frontend'
+          project: 'booking-app-backend'
+          path: 'backend'
+          format: 'HTML'
+          args: >
+            --enableRetired
+            --failOnCVSS 7
+
+      - name: OWASP Dependency Check (Frontend)
+        uses: dependency-check/Dependency-Check_Action@main
+        id: depcheck_frontend
+        with:
+          project: 'booking-app-frontend'
+          path: 'frontend'
           format: 'HTML'
           args: >
             --enableRetired
