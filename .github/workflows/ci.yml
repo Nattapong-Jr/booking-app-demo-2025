@@ -178,7 +178,8 @@ jobs:
         run: |
           vercel --prod \
             --token $VERCEL_TOKEN \
-            --yes --debug
+            --yes --debug \
+            --build-env VITE_API_URL="${{ secrets.RENDER_BACKEND_URL }}"
 
   # ─────────────────────────────────────────────
   # Job 4: Deploy Backend to Render
